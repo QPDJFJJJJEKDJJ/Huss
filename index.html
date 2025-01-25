@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسم </title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2980b9, #8e44ad);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .name-container {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 20px;
+            padding: 30px 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            padding-bottom: 20px;
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: fadeInUp 2s ease-out forwards, textGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6), 0 0 25px #ff79c6, 0 0 35px #ff79c6;
+            }
+            100% {
+                text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6), 0 0 25px #3498db, 0 0 35px #3498db;
+            }
+        }
+
+        .name::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+            animation: underlineGlow 1.5s ease-out infinite alternate;
+        }
+
+        @keyframes underlineGlow {
+            0% {
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+            }
+            100% {
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 80px;
+            color: #fff;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .name:hover {
+            color: #1abc9c;
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 70px;
+            }
+            .icon {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="name-container">
+        <div class="name">HUSSEIN</div>
+        <div class="icon">&#10024;</div> <!-- أيقونة نجمة -->
+    </div>
+</body>
+</html>
